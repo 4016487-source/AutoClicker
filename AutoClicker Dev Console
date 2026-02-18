@@ -1,0 +1,21 @@
+let interval, speed = 100; // Default speed in milliseconds
+const startAutoClicker = (key) => {
+    document.addEventListener('keydown', (e) => {
+        if (e.key === key) {
+            if (!interval) {
+                interval = setInterval(() => document.body.click(), speed);
+            } else {
+                clearInterval(interval);
+                interval = null;
+            }
+        }
+    });
+};
+
+const setSpeed = (newSpeed) => {
+    speed = newSpeed;
+};
+
+// Usage: Call startAutoClicker with your desired key
+startAutoClicker('a'); // Press 'a' to toggle auto clicker
+setSpeed(50); // Set speed to 50ms
