@@ -1,0 +1,14 @@
+javascript:(function() {
+    let clicks = prompt("Enter number of clicks:", "10");
+    let speed = prompt("Enter speed in milliseconds:", "1000");
+    let count = 0;
+
+    const clicker = setInterval(() => {
+        if (count < clicks) {
+            document.body.click();
+            count++;
+        } else {
+            clearInterval(clicker);
+        }
+    }, speed);
+})();
